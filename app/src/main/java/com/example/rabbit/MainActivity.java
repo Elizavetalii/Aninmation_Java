@@ -1,28 +1,17 @@
 package com.example.rabbit;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.animation.Animation;
 import android.widget.Button;
-import android.os.Bundle;
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import android.widget.ImageView;
 import android.view.animation.AnimationUtils;
 import android.view.View;
 import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.Button;
-import androidx.appcompat.app.AppCompatActivity;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-private Button goToFrameAnimation;
+    private Button goToFrameAnimation;
     private Button goToTweenAnimation;
+    private TextView welcomeText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +20,7 @@ private Button goToFrameAnimation;
 
         goToFrameAnimation = findViewById(R.id.button_frame_animation);
         goToTweenAnimation = findViewById(R.id.button_tween_animation);
-
-        // Устанавливаем анимацию появления
-        Animation fadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in);
-        findViewById(R.id.main_layout).startAnimation(fadeInAnimation);
+        welcomeText = findViewById(R.id.textView);
 
         goToFrameAnimation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,5 +39,21 @@ private Button goToFrameAnimation;
                 overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Анимация текстового блока
+        Animation scaleInAnimation = AnimationUtils.loadAnimation(this, R.anim.text);
+        welcomeText.startAnimation(scaleInAnimation);
+
+        // Анимация кнопки 1
+        Animation slideInRightAnimation = AnimationUtils.loadAnimation(this, R.anim.button1);
+        goToFrameAnimation.startAnimation(slideInRightAnimation);
+
+        // Анимация кнопки 2
+        Animation slideInLeftAnimation = AnimationUtils.loadAnimation(this, R.anim.button2);
+        goToTweenAnimation.startAnimation(slideInLeftAnimation);
     }
 }

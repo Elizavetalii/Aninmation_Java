@@ -24,6 +24,5 @@
 
         <activity android:name=".FrameAnimation" />
         <activity android:name=".TweenAnimation" />
-
     </application>
 </manifest>

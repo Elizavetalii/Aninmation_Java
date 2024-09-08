@@ -5,9 +5,11 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#18181D"
     tools:context=".MainActivity">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    <LinearLayout
         android:id="@+id/main_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,24 +17,44 @@
         android:gravity="center"
         android:padding="16dp">
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Добро пожаловать в мир анимаций"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#CEC4C4"
+            android:layout_marginBottom="24dp" />
+
+
         <Button
             android:id="@+id/button_frame_animation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Бегущий кролик"
-            android:elevation="4dp"
             android:layout_margin="8dp"
-            />
+            android:backgroundTint="#978776"
+            android:drawablePadding="8dp"
+            android:elevation="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:padding="16dp"
+            android:text="Бегущий кролик"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/button_tween_animation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:backgroundTint="#27502F"
+            android:drawablePadding="8dp"
+            android:elevation="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:padding="16dp"
             android:text="Мигающий кролик"
-            android:elevation="4dp"
-            android:layout_margin="8dp" />
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
 
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

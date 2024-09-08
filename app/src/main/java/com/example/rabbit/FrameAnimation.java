@@ -1,8 +1,6 @@
 package com.example.rabbit;
-
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
-import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -25,7 +23,7 @@ public class FrameAnimation extends AppCompatActivity {
         frameAnimation.start();
 
         // Устанавливаем анимацию появления
-        Animation fadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+        Animation fadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_inf);
         findViewById(R.id.frame_animation_layout).startAnimation(fadeInAnimation);
     }
 
